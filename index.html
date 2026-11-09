@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>500KUSER — Cộng Đồng Đánh Giá Google Maps 5 Sao & Tăng Trưởng Local SEO</title>
+  <meta name="description" content="500KUSER là cộng đồng đông đảo hỗ trợ view, đánh giá 5 sao Google Maps cùng nhau lên Top Google và giúp khách hàng tin tưởng mua hàng nhiều hơn." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html, body {
+      background-color: #F8FAFC !important;
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Bright & Fresh Ambient Mesh Background */
+    .ambient-bright {
+      background-color: #F8FAFC !important;
+      background-image:
+        radial-gradient(circle at 12% 10%, rgba(16, 185, 129, 0.12) 0%, transparent 42%),
+        radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.12) 0%, transparent 42%),
+        radial-gradient(circle at 50% 45%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 45%) !important;
+    }
+
+    /* Double-Bezel Architecture */
+    .bezel-shell {
+      background: rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      border-radius: 2rem;
+      padding: 0.375rem;
+      transition: transform 0.6s var(--ease-spring), border-color 0.6s var(--ease-spring), box-shadow 0.6s var(--ease-spring);
+    }
+    .bezel-shell:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+      box-shadow: 0 24px 48px -15px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+    .bezel-core {
+      background: #FFFFFF;
+      border-radius: calc(2rem - 0.375rem);
+      box-shadow:
+        0 4px 20px -2px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      height: 100%;
+    }
+
+    /* Highlighted Featured Bezel */
+    .bezel-shell-featured {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(14, 165, 233, 0.22), rgba(245, 158, 11, 0.22));
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      border-radius: 2rem;
+      padding: 0.4rem;
+      box-shadow: 0 28px 60px -15px rgba(16, 185, 129, 0.16);
+      transition: transform 0.6s var(--ease-spring);
+    }
+    .bezel-core-featured {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+      border-radius: calc(2rem - 0.4rem);
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 1);
+      height: 100%;
+    }
+
+    .spring-transition {
+      transition: all 0.65s var(--ease-spring);
+    }
+
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+      will-change: opacity, transform;
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .placeholder-grid {
+      background-color: #F1F5F9;
+      background-image:
+        linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #E2E8F0;
+      height: 8px;
+      border-radius: 999px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #10B981;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.45);
+      cursor: pointer;
+      transition: transform 0.2s var(--ease-spring);
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+
+<body class="ambient-bright text-slate-900 antialiased selection:bg-emerald-500/20 selection:text-emerald-900">
+
+  <!-- =====================================================================
+       FLOATING FLUID ISLAND NAVBAR
+       ===================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 pt-5 pointer-events-none">
+    <nav class="max-w-6xl mx-auto pointer-events-auto flex items-center justify-between px-4 py-2.5 rounded-full bg-white/85 backdrop-blur-2xl border border-slate-200/80 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.08)]">
+      <!-- Brand Identity -->
+      <a href="#top" class="flex items-center gap-3 pl-2 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 via-teal-500 to-sky-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/25">
+          <i class="ph-fill ph-map-pin-line text-xl group-hover:scale-110 spring-transition"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-bold text-lg tracking-tight text-slate-900">500K<span class="text-emerald-600">USER</span></span>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">Community</span>
+          </div>
+          <span class="text-[11px] text-slate-500 hidden sm:inline">Cộng Đồng Review Maps #1 VN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links (Clean, No Numbering) -->
+      <div class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-600">
+        <a href="#gioi-thieu" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Giới thiệu</a>
+        <a href="#bang-gia" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Bảng giá</a>
+        <a href="#quy-trinh" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Quy trình</a>
+        <a href="#doi-tuong" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Đối tượng</a>
+        <a href="#tieu-chuan" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Tiêu chuẩn</a>
+        <a href="#du-an" class="px-3.5 py-2 rounded-full hover:text-emerald-600 hover:bg-emerald-50/80 spring-transition">Dự án thực tế</a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-2">
+        <a href="#form-tu-van" class="group inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 spring-transition active:scale-[0.98]">
+          <span>Tư vấn ngay</span>
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 spring-transition">
+            <i class="ph-bold ph-arrow-up-right text-white text-sm"></i>
+          </span>
+        </a>
+
+        <button id="mobile-menu-btn" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800">
+          <i id="menu-icon" class="ph-bold ph-list text-xl"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden pointer-events-auto lg:hidden mt-3 max-w-md mx-auto rounded-3xl bg-white/95 backdrop-blur-2xl border border-slate-200 p-5 shadow-2xl">
+      <div class="flex flex-col gap-1.5 text-sm font-semibold text-slate-700">
+        <a href="#gioi-thieu" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Giới thiệu 500KUSER</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+        <a href="#bang-gia" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Bảng giá dịch vụ</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+        <a href="#quy-trinh" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Quy trình triển khai</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+        <a href="#doi-tuong" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Đối tượng sử dụng</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+        <a href="#tieu-chuan" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Tiêu chuẩn Review</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+        <a href="#du-an" class="mobile-link px-4 py-3 rounded-2xl hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+          <span>Dự án đã triển khai</span>
+          <i class="ph-bold ph-caret-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       SECTION 1: GIỚI THIỆU 500KUSER (GỌN, TRỰC QUAN)
+       ===================================================================== -->
+  <main id="top" class="pt-32 md:pt-36">
+    <section id="gioi-thieu" class="relative py-12 md:py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left Column (7 cols) -->
+          <div class="lg:col-span-7 space-y-6 reveal-up">
+            <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] tracking-tight leading-[1.12] text-slate-900">
+              Tăng Đánh Giá Google Maps 5 Sao Cùng Cộng Đồng <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-sky-600">500KUSER</span>
+            </h1>
+
+            <!-- Core Community Definition -->
+            <div class="bezel-shell">
+              <div class="bezel-core p-6 border-l-4 border-l-emerald-500 bg-gradient-to-r from-emerald-50/70 via-white to-white">
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center shrink-0 text-emerald-600">
+                    <i class="ph-fill ph-users-three text-2xl"></i>
+                  </div>
+                  <p class="text-base sm:text-lg text-slate-800 font-medium leading-relaxed">
+                    “<strong class="text-slate-950 font-extrabold">500KUSER</strong> là cộng đồng user đông đảo hỗ trợ <span class="text-emerald-700 font-bold underline decoration-emerald-400 decoration-2 underline-offset-4">view đánh giá cùng nhau lên top Google</span> và giúp cho <span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 font-bold">khách hàng tin tưởng mua hàng nhiều hơn</span>.”
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Feature Pills Instead of Long Paragraphs -->
+            <div class="flex flex-wrap gap-2.5">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 shadow-sm">
+                <i class="ph-fill ph-check-circle text-emerald-500 text-base"></i> 100% Người dùng & Local Guide thật
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 shadow-sm">
+                <i class="ph-fill ph-device-mobile text-sky-500 text-base"></i> Thiết bị thật • IP 4G/Wifi tự nhiên
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-700 shadow-sm">
+                <i class="ph-fill ph-shield-check text-amber-500 text-base"></i> Không dùng Tool • Bảo hành bền vững
+              </span>
+            </div>
+
+            <!-- Primary Actions -->
+            <div class="flex flex-wrap items-center gap-4 pt-1">
+              <a href="#bang-gia" class="group inline-flex items-center gap-4 pl-7 pr-2.5 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-bold text-sm sm:text-base shadow-[0_14px_30px_-6px_rgba(16,185,129,0.45)] spring-transition active:scale-[0.98]">
+                <span>Xem bảng giá ngay</span>
+                <span class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-0.5 spring-transition">
+                  <i class="ph-bold ph-arrow-up-right text-lg"></i>
+                </span>
+              </a>
+
+              <a href="#du-an" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-bold text-sm sm:text-base shadow-sm spring-transition">
+                <i class="ph-fill ph-images text-amber-500 text-xl"></i>
+                <span>5 Dự án Maps thực tế</span>
+              </a>
+            </div>
+
+            <!-- 4 Key Metrics -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="bezel-shell">
+                <div class="bezel-core p-3.5 text-center">
+                  <div class="font-display font-bold text-2xl text-emerald-600">500K+</div>
+                  <div class="text-xs font-medium text-slate-500">User cộng đồng</div>
+                </div>
+              </div>
+              <div class="bezel-shell">
+                <div class="bezel-core p-3.5 text-center">
+                  <div class="font-display font-bold text-2xl text-amber-500">4.9★</div>
+                  <div class="text-xs font-medium text-slate-500">Điểm trung bình</div>
+                </div>
+              </div>
+              <div class="bezel-shell">
+                <div class="bezel-core p-3.5 text-center">
+                  <div class="font-display font-bold text-2xl text-slate-900">1,200+</div>
+                  <div class="text-xs font-medium text-slate-500">Maps lên Top</div>
+                </div>
+              </div>
+              <div class="bezel-shell">
+                <div class="bezel-core p-3.5 text-center">
+                  <div class="font-display font-bold text-2xl text-sky-600">98.6%</div>
+                  <div class="text-xs font-medium text-slate-500">Hiển thị bền vững</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Visual Placeholder (5 cols) -->
+          <div class="lg:col-span-5 reveal-up">
+            <div class="bezel-shell-featured">
+              <div class="bezel-core-featured p-6 space-y-5">
+                <!-- Main Hero Placeholder Box -->
+                <div class="relative rounded-2xl overflow-hidden border-2 border-dashed border-emerald-400/70 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-6 text-center group">
+                  <div class="w-14 h-14 rounded-2xl bg-white shadow-md border border-emerald-200 flex items-center justify-center mb-3 group-hover:scale-110 spring-transition text-emerald-600">
+                    <i class="ph-duotone ph-image-square text-3xl"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 text-[11px] font-mono font-bold mb-1.5">
+                    [PLACEHOLDER ẢNH HERO 500KUSER]
+                  </span>
+                  <p class="text-xs text-slate-500 max-w-xs">
+                    Chỗ gắn hình ảnh tổng quan Cộng đồng 500KUSER
+                  </p>
+
+                  <!-- Live Toast -->
+                  <div class="mt-4 w-full max-w-xs rounded-xl bg-white shadow-md border border-slate-200/90 p-3 flex items-center gap-3 text-left">
+                    <div class="w-9 h-9 rounded-full bg-amber-100 text-amber-700 border border-amber-200 flex items-center justify-center shrink-0 font-extrabold text-xs">
+                      LG
+                    </div>
+                    <div class="text-xs">
+                      <div class="text-slate-900 font-bold">Local Guide Cấp 6 <span class="text-amber-500">★★★★★</span></div>
+                      <div class="text-slate-500 text-[11px]">IP 4G thật • Kèm ảnh check-in tại điểm</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4 Visual Elements of a Review -->
+                <div class="grid grid-cols-2 gap-2.5">
+                  <div class="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-2.5">
+                    <i class="ph-fill ph-star text-amber-500 text-lg"></i>
+                    <span class="text-xs font-bold text-slate-800">Chấm điểm 5 Sao</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-2.5">
+                    <i class="ph-fill ph-chat-centered-text text-emerald-600 text-lg"></i>
+                    <span class="text-xs font-bold text-slate-800">Nhận xét chuẩn SEO</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-2.5">
+                    <i class="ph-fill ph-camera text-sky-600 text-lg"></i>
+                    <span class="text-xs font-bold text-slate-800">Hình ảnh thực tế</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-white border border-slate-200/80 flex items-center gap-2.5">
+                    <i class="ph-fill ph-thumbs-up text-purple-600 text-lg"></i>
+                    <span class="text-xs font-bold text-slate-800">View & Tìm đường</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3 Core Benefits (Concise & Visual) -->
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+          <div class="bezel-shell">
+            <div class="bezel-core p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                <i class="ph-duotone ph-navigation-arrow text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Lên Top Bản Đồ Địa Phương</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">Tăng lượt tìm kiếm, chỉ đường và tương tác thật giúp Map vươn lên Top 3 hiển thị.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bezel-shell">
+            <div class="bezel-core p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
+                <i class="ph-duotone ph-globe-hemisphere-west text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Trợ Lực Đẩy Top Website</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">Xác thực thực thể (Entity) uy tín với Google, tạo Backlink chất lượng đẩy từ khóa Web.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bezel-shell">
+            <div class="bezel-core p-6 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+                <i class="ph-duotone ph-shopping-bag-open text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Tăng Tỷ Lệ Khách Mua Hàng</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">Hàng trăm đánh giá 5 sao chân thực giúp khách hàng mới tin tưởng chốt đơn ngay.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: CÁC GÓI DỊCH VỤ ĐÁNH GIÁ GOOGLE MAP
+         ===================================================================== -->
+    <section id="bang-gia" class="py-20 md:py-24 px-4 relative border-t border-slate-200/80 bg-white/60">
+      <div class="max-w-7xl mx-auto space-y-12">
+        
+        <!-- Section Header + Region Switcher -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-up">
+          <div class="space-y-2 max-w-2xl">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+              Các Gói Dịch Vụ Đánh Giá Google Map
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+              Bảng giá minh bạch cho doanh nghiệp khắp 63 tỉnh thành Việt Nam và hệ thống Maps Quốc Tế.
+            </p>
+          </div>
+
+          <!-- Interactive Region Tabs -->
+          <div class="bezel-shell self-start lg:self-auto">
+            <div class="bezel-core p-1.5 flex items-center gap-1">
+              <button id="tab-vn" onclick="switchPricingRegion('vn')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-emerald-600 text-white shadow-md shadow-emerald-600/20 spring-transition flex items-center gap-2">
+                <i class="ph-fill ph-flag-banner"></i>
+                <span>Maps Việt Nam</span>
+              </button>
+              <button id="tab-intl" onclick="switchPricingRegion('intl')" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 spring-transition flex items-center gap-2">
+                <i class="ph-bold ph-globe"></i>
+                <span>Maps Quốc Tế (US/UK/AU/EU...)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Pricing Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 reveal-up">
+          
+          <!-- GÓI G1 -->
+          <div class="bezel-shell flex flex-col">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">KHỞI ĐỘNG</span>
+                  <span class="font-display font-bold text-lg text-emerald-600">Gói G1</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline gap-1">
+                    <span id="price-g1" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">1.000.000</span>
+                    <span class="text-sm text-slate-500 font-bold">đ</span>
+                  </div>
+                  <p id="unit-g1" class="text-xs text-slate-500 mt-1">40.000đ / review thật</p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 space-y-2.5 text-sm text-slate-600">
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Số lượng: <strong class="text-slate-900">25 Review 5★</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Hoàn thành: <strong class="text-slate-900">15 ngày</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Ngôn ngữ: <strong class="text-slate-900">Anh / Việt</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Ký tự: <strong class="text-slate-900">Không giới hạn</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>File theo dõi + <strong class="text-sky-600">BOT Telegram</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-shield-check text-amber-500 text-base shrink-0"></i>
+                    <span><strong class="text-amber-700">Bảo hành</strong> đầy đủ</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#form-tu-van" onclick="selectPackage('Gói G1 - 25 Review')" class="w-full py-3 px-5 rounded-full bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-800 font-bold text-sm text-center spring-transition">
+                Chọn Gói G1
+              </a>
+            </div>
+          </div>
+
+          <!-- GÓI G2 -->
+          <div class="bezel-shell flex flex-col">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-50 text-sky-700">TĂNG TỐC</span>
+                  <span class="font-display font-bold text-lg text-sky-600">Gói G2</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline gap-1">
+                    <span id="price-g2" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">2.100.000</span>
+                    <span class="text-sm text-slate-500 font-bold">đ</span>
+                  </div>
+                  <p id="unit-g2" class="text-xs text-slate-500 mt-1">Chỉ 35.000đ / review</p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 space-y-2.5 text-sm text-slate-600">
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Số lượng: <strong class="text-slate-900">60 Review 5★</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Hoàn thành: <strong class="text-slate-900">30 ngày</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Ngôn ngữ: <strong class="text-slate-900">Anh / Việt</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Ký tự: <strong class="text-slate-900">Không giới hạn</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>File theo dõi + <strong class="text-sky-600">BOT Telegram</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-shield-check text-amber-500 text-base shrink-0"></i>
+                    <span><strong class="text-amber-700">Bảo hành</strong> 1 đổi 1</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#form-tu-van" onclick="selectPackage('Gói G2 - 60 Review')" class="w-full py-3 px-5 rounded-full bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-800 font-bold text-sm text-center spring-transition">
+                Chọn Gói G2
+              </a>
+            </div>
+          </div>
+
+          <!-- GÓI G3 (FEATURED) -->
+          <div class="bezel-shell-featured flex flex-col relative md:-translate-y-2">
+            <div class="bezel-core-featured p-6 flex flex-col justify-between space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-400 text-slate-950">★ ƯA CHUỘNG NHẤT</span>
+                  <span class="font-display font-bold text-lg text-emerald-600">Gói G3</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline gap-1">
+                    <span id="price-g3" class="font-display font-bold text-3xl sm:text-4xl text-emerald-600">3.000.000</span>
+                    <span class="text-sm text-slate-600 font-bold">đ</span>
+                  </div>
+                  <p id="unit-g3" class="text-xs text-emerald-700 font-semibold mt-1">Tối ưu — Chỉ 30.000đ / review</p>
+                </div>
+
+                <div class="pt-4 border-t border-emerald-200/70 space-y-2.5 text-sm text-slate-700">
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
+                    <span>Số lượng: <strong class="text-slate-950">100 Review 5★</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
+                    <span>Hoàn thành: <strong class="text-slate-950">45 ngày</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
+                    <span>Ngôn ngữ: <strong class="text-slate-950">Anh / Việt / Tự chọn</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
+                    <span>Ưu tiên <strong class="text-slate-950">Local Guide cấp cao</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-base shrink-0"></i>
+                    <span>File theo dõi + <strong class="text-sky-700">BOT Telegram</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-shield-check text-amber-500 text-base shrink-0"></i>
+                    <span><strong class="text-amber-700">Bảo hành VIP</strong> & chăm sóc</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#form-tu-van" onclick="selectPackage('Gói G3 - 100 Review (Ưa chuộng)')" class="group w-full py-3 px-5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 spring-transition">
+                <span>Chọn Gói G3 Ngay</span>
+                <i class="ph-bold ph-arrow-right group-hover:translate-x-1 spring-transition"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- GÓI G4 -->
+          <div class="bezel-shell flex flex-col">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 text-purple-700">CHUỖI LỚN</span>
+                  <span class="font-display font-bold text-lg text-purple-600">Gói G4</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline gap-1">
+                    <span id="price-g4" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">Thỏa thuận</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">Dành cho hệ thống & chuỗi cửa hàng</p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-100 space-y-2.5 text-sm text-slate-600">
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Số lượng: <strong class="text-slate-900">&gt;1.000 Review 5★</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Thời gian: <strong class="text-slate-900">Theo lộ trình</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Ngôn ngữ: <strong class="text-slate-900">Đa ngôn ngữ</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>Báo cáo định kỳ <strong class="text-slate-900">2 tuần/lần</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-check-circle text-emerald-500 text-base shrink-0"></i>
+                    <span>File theo dõi + <strong class="text-sky-600">BOT Telegram</strong></span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-shield-check text-amber-500 text-base shrink-0"></i>
+                    <span>Thanh toán chia theo đợt</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#form-tu-van" onclick="selectPackage('Gói G4 - Trên 1000 Review')" class="w-full py-3 px-5 rounded-full bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-800 font-bold text-sm text-center spring-transition">
+                Nhận Báo Giá Riêng
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Compact Add-on Badges + Quick Calculator -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 reveal-up">
+          <!-- Left: Visual Add-on Badges -->
+          <div class="lg:col-span-7 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <h3 class="font-display font-bold text-base text-slate-900 flex items-center gap-2">
+                <i class="ph-fill ph-sparkle text-amber-500 text-lg"></i>
+                <span>Tùy chọn nâng cao & Lưu ý dịch vụ</span>
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-700">Đề xuất nội dung</span>
+                  <span class="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">+10.000đ / bài</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-700">Review kèm hình ảnh (≤20%)</span>
+                  <span class="text-xs font-extrabold text-sky-700 bg-sky-100 px-2.5 py-1 rounded-full">+20.000đ / bài</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-700">Rải chậm theo yêu cầu</span>
+                  <span class="text-xs font-extrabold text-amber-800 bg-amber-100 px-2.5 py-1 rounded-full">+20.000đ / ngày</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-700">Tạo & Xác minh Map mới</span>
+                  <span class="text-xs font-extrabold text-purple-800 bg-purple-100 px-2.5 py-1 rounded-full">1.500.000đ / Map</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500">
+                * Tài khoản đánh giá là người dùng thật ngẫu nhiên trong cộng đồng 500KUSER. Giá chưa gồm VAT 8%.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Quick Cost Calculator -->
+          <div class="lg:col-span-5 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4 bg-gradient-to-br from-emerald-50/50 via-white to-sky-50/40">
+              <div class="flex items-center justify-between">
+                <h3 class="font-display font-bold text-base text-slate-900">Ước tính nhanh ngân sách</h3>
+                <span id="calc-count-label" class="text-emerald-700 font-extrabold text-sm bg-emerald-100 px-3 py-0.5 rounded-full">60 Review</span>
+              </div>
+
+              <input id="calc-slider" type="range" min="25" max="300" step="5" value="60" oninput="updateCalculator()" class="w-full" />
+
+              <div class="grid grid-cols-2 gap-2.5 text-xs">
+                <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 cursor-pointer">
+                  <input id="calc-content" type="checkbox" onchange="updateCalculator()" class="accent-emerald-600" />
+                  <span class="text-slate-700 font-semibold">+Soạn nội dung (+10k)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 cursor-pointer">
+                  <input id="calc-photo" type="checkbox" onchange="updateCalculator()" class="accent-emerald-600" />
+                  <span class="text-slate-700 font-semibold">+20% Có ảnh (+20k)</span>
+                </label>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-emerald-600 text-white flex items-center justify-between">
+                <div>
+                  <div class="text-[11px] text-emerald-100">Dự kiến (Maps VN)</div>
+                  <div id="calc-total" class="font-display font-bold text-xl text-white">2.100.000đ</div>
+                </div>
+                <a href="#form-tu-van" class="px-4 py-2 rounded-full bg-white text-emerald-700 font-extrabold text-xs hover:bg-emerald-50 spring-transition">
+                  Đăng ký ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: QUY TRÌNH TRIỂN KHAI (4 BƯỚC TRỰC QUAN)
+         ===================================================================== -->
+    <section id="quy-trinh" class="py-20 md:py-24 px-4 border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto space-y-12">
+        
+        <div class="text-center max-w-2xl mx-auto space-y-2 reveal-up">
+          <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+            Quy Trình Triển Khai 4 Bước
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Đơn giản, minh bạch và theo dõi kết quả trực tiếp theo thời gian thực.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
+          <!-- Step 1 -->
+          <div class="bezel-shell group">
+            <div class="bezel-core p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-3xl text-emerald-600">01</span>
+                <div class="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+                  <i class="ph-duotone ph-chats-circle text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900">Tư Vấn & Báo Giá</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Khảo sát sức khỏe Map hiện tại và chọn gói số lượng đánh giá phù hợp mục tiêu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bezel-shell group">
+            <div class="bezel-core p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-3xl text-sky-600">02</span>
+                <div class="w-11 h-11 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600">
+                  <i class="ph-duotone ph-file-text text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900">Lên Kịch Bản Review</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Soạn nội dung đánh giá chuẩn SEO sát ngành hàng và gửi File để bạn duyệt trước.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bezel-shell group">
+            <div class="bezel-core p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-3xl text-amber-500">03</span>
+                <div class="w-11 h-11 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600">
+                  <i class="ph-duotone ph-users-four text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900">Cộng Đồng Đánh Giá</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                User thật trong cộng đồng 500KUSER tìm đường và đăng review 5 sao bằng IP/thiết bị thật.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bezel-shell group">
+            <div class="bezel-core p-6 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-3xl text-purple-600">04</span>
+                <div class="w-11 h-11 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
+                  <i class="ph-duotone ph-shield-star text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="font-display font-bold text-lg text-slate-900">Nghiệm Thu & Bảo Hành</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Báo cáo tự động qua AI BOT Telegram & Google Sheet, cam kết bảo hành 1 đổi 1.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: ĐỐI TƯỢNG CẦN SỬ DỤNG DỊCH VỤ (NGẮN GỌN, TRỰC QUAN)
+         ===================================================================== -->
+    <section id="doi-tuong" class="py-20 md:py-24 px-4 border-t border-slate-200/80 bg-white/60">
+      <div class="max-w-7xl mx-auto space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-2 reveal-up">
+          <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+            Đối Tượng Cần Sử Dụng Dịch Vụ Đánh Giá Google Map 5 Sao
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Đặc biệt hiệu quả cho các ngành dịch vụ địa phương có khách hàng tra cứu bản đồ mỗi ngày.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal-up">
+          
+          <!-- 1. Nhà hàng / Quán ăn (6 cols) -->
+          <div class="md:col-span-6 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600">
+                    <i class="ph-duotone ph-fork-knife text-2xl"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-xl text-slate-900">Nhà Hàng / Quán Ăn / Cafe</h3>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200">+320% Chỉ đường</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Thu hút thực khách tìm kiếm <span class="font-semibold text-slate-800">“quán ăn ngon gần đây”</span> nhờ hình ảnh món ăn bắt mắt và hàng trăm lời khen thực tế.
+              </p>
+              <div class="rounded-xl border border-dashed border-slate-300 placeholder-grid p-3.5 flex items-center justify-center gap-2 text-xs font-semibold text-slate-500">
+                <i class="ph-duotone ph-image text-amber-600 text-lg"></i>
+                <span>[Placeholder Ảnh Nhà Hàng / Quán Ăn]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Khách sạn / Nhà nghỉ (6 cols) -->
+          <div class="md:col-span-6 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600">
+                    <i class="ph-duotone ph-buildings text-2xl"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-xl text-slate-900">Khách Sạn / Resort / Homestay</h3>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-sky-50 text-sky-700 border border-sky-200">Tăng đặt phòng</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Chiếm lĩnh vị trí đầu khi du khách tra cứu <span class="font-semibold text-slate-800">“khách sạn quanh đây”</span>, tăng tỷ lệ đặt phòng trực tiếp không qua trung gian.
+              </p>
+              <div class="rounded-xl border border-dashed border-slate-300 placeholder-grid p-3.5 flex items-center justify-center gap-2 text-xs font-semibold text-slate-500">
+                <i class="ph-duotone ph-image text-sky-600 text-lg"></i>
+                <span>[Placeholder Ảnh Khách Sạn / Homestay]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Spa Làm Đẹp (4 cols) -->
+          <div class="md:col-span-4 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-pink-50 border border-pink-200 flex items-center justify-center text-pink-600">
+                  <i class="ph-duotone ph-sparkle text-2xl"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Spa / Thẩm Mỹ / Nha Khoa</h3>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Xây dựng uy tín tuyệt đối về tay nghề và chất lượng dịch vụ ngay từ lần tìm kiếm đầu tiên.
+              </p>
+              <div class="rounded-xl border border-dashed border-slate-300 placeholder-grid p-3 text-xs font-semibold text-slate-500 flex items-center justify-center gap-2">
+                <i class="ph-duotone ph-image text-pink-600 text-base"></i>
+                <span>[Placeholder Ảnh Spa]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Công Ty Du Lịch (4 cols) -->
+          <div class="md:col-span-4 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+                  <i class="ph-duotone ph-airplane-tilt text-2xl"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Công Ty Du Lịch & Đặt Vé</h3>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Khẳng định độ tin cậy của dịch vụ tour, đặt vé, giữ chân khách hàng trước các đối thủ cạnh tranh.
+              </p>
+              <div class="rounded-xl border border-dashed border-slate-300 placeholder-grid p-3 text-xs font-semibold text-slate-500 flex items-center justify-center gap-2">
+                <i class="ph-duotone ph-image text-emerald-600 text-base"></i>
+                <span>[Placeholder Ảnh Du Lịch]</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Cửa Hàng Thời Trang (4 cols) -->
+          <div class="md:col-span-4 bezel-shell">
+            <div class="bezel-core p-6 flex flex-col justify-between space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
+                  <i class="ph-duotone ph-t-shirt text-2xl"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-slate-900">Shop Thời Trang / Showroom</h3>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Lan tỏa hình ảnh cửa hàng, mẫu mã và trải nghiệm mua sắm thực tế giúp tăng khách ghé shop.
+              </p>
+              <div class="rounded-xl border border-dashed border-slate-300 placeholder-grid p-3 text-xs font-semibold text-slate-500 flex items-center justify-center gap-2">
+                <i class="ph-duotone ph-image text-purple-600 text-base"></i>
+                <span>[Placeholder Ảnh Thời Trang]</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: TIÊU CHUẨN CỦA MỘT REVIEW CHẤT LƯỢNG
+         ===================================================================== -->
+    <section id="tieu-chuan" class="py-20 md:py-24 px-4 border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-2 reveal-up">
+          <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+            Tiêu Chuẩn Của Một Review Google Maps Chất Lượng
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Tuân thủ thuật toán Google để mỗi đánh giá đều lên Top và hiển thị vĩnh viễn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-up">
+          
+          <!-- Left: 6 Compact Visual Criteria Cards (7 cols) -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bezel-shell">
+              <div class="bezel-core p-5 flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                  <i class="ph-duotone ph-device-mobile-camera text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-slate-900">Thiết bị & Định vị GPS thật</h3>
+                  <p class="text-xs text-slate-600 mt-1">Đánh giá từ điện thoại/laptop có lịch sử di chuyển và bật định vị thật.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bezel-shell">
+              <div class="bezel-core p-5 flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
+                  <i class="ph-duotone ph-text-aa text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-slate-900">Độ dài trên 115 ký tự</h3>
+                  <p class="text-xs text-slate-600 mt-1">Vượt chuẩn bộ lọc của Google, không viết sơ sài qua loa.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bezel-shell">
+              <div class="bezel-core p-5 flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+                  <i class="ph-duotone ph-magnifying-glass-plus text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-slate-900">Chứa từ khóa dịch vụ</h3>
+                  <p class="text-xs text-slate-600 mt-1">Đề cập chi tiết sản phẩm, thái độ phục vụ giúp đẩy SEO Local.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bezel-shell">
+              <div class="bezel-core p-5 flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shrink-0">
+                  <i class="ph-duotone ph-scales text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-slate-900">Chân thực & Cân bằng</h3>
+                  <p class="text-xs text-slate-600 mt-1">Văn phong tự nhiên như khách hàng vừa trải nghiệm thực tế.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bezel-shell sm:col-span-2">
+              <div class="bezel-core p-5 flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                  <i class="ph-duotone ph-shield-check text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-slate-900">Tuân thủ 100% nguyên tắc Google</h3>
+                  <p class="text-xs text-slate-600 mt-0.5">Không chèn link rác, số điện thoại quảng cáo hay nội dung vi phạm chính sách.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Live Visual Sample Review Card (5 cols) -->
+          <div class="lg:col-span-5">
+            <div class="bezel-shell-featured">
+              <div class="bezel-core-featured p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white font-bold text-sm">
+                      M
+                    </div>
+                    <div>
+                      <div class="text-sm font-bold text-slate-900">Minh Hoàng (Local Guide)</div>
+                      <div class="text-xs text-slate-500">Cấp 6 • Đăng từ iPhone (4G)</div>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">Mẫu Chuẩn</span>
+                </div>
+
+                <div class="text-amber-500 text-sm tracking-widest">★★★★★ <span class="text-xs text-slate-400 font-normal ml-1">Vừa xong</span></div>
+
+                <p class="text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-4 rounded-xl border border-emerald-200/80 shadow-sm">
+                  “Mình tìm thấy cửa hàng trên Google Maps và rất ưng ý khi ghé trực tiếp. Không gian sạch sẽ, nhân viên tư vấn nhiệt tình, giá cả minh bạch. Dù cuối tuần hơi đông một chút nhưng xử lý rất nhanh. Sẽ ủng hộ dài lâu!”
+                </p>
+
+                <div class="flex flex-wrap gap-2 text-[11px] font-bold text-emerald-700">
+                  <span class="px-2.5 py-1 rounded-md bg-emerald-100/70">✓ &gt;115 ký tự</span>
+                  <span class="px-2.5 py-1 rounded-md bg-emerald-100/70">✓ Có từ khóa SEO</span>
+                  <span class="px-2.5 py-1 rounded-md bg-emerald-100/70">✓ Tự nhiên 100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: DỰ ÁN REVIEW GOOGLE MAP 5 SAO ĐÃ TRIỂN KHAI (5 MAPS)
+         ===================================================================== -->
+    <section id="du-an" class="py-20 md:py-24 px-4 border-t border-slate-200/80 bg-white/60">
+      <div class="max-w-7xl mx-auto space-y-10">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-up">
+          <div class="space-y-2 max-w-2xl">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+              Dự Án Review Google Map 5 Sao Đã Triển Khai
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+              5 dự án tiêu biểu từ cộng đồng 500KUSER (Bấm vào khung để chọn ảnh chụp Maps hoặc gửi ảnh cho AI đính kèm).
+            </p>
+          </div>
+
+          <div class="shrink-0">
+            <label class="cursor-pointer inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs sm:text-sm font-bold shadow-sm spring-transition">
+              <i class="ph-bold ph-upload-simple text-lg text-emerald-600"></i>
+              <span>Tải thử 5 ảnh chụp Maps</span>
+              <input id="bulk-map-upload" type="file" accept="image/*" multiple class="hidden" onchange="handleBulkMapUpload(event)" />
+            </label>
+          </div>
+        </div>
+
+        <!-- 5 Maps Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal-up">
+          
+          <!-- MAP #1 (6 cols) -->
+          <div class="md:col-span-6 bezel-shell group">
+            <div class="bezel-core p-5 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-display font-bold text-xs flex items-center justify-center">#1</span>
+                  <h3 class="font-display font-bold text-base text-slate-900">Dự Án Google Map #01 — Nhà Hàng Ẩm Thực</h3>
+                </div>
+                <span class="text-xs font-bold text-amber-500">4.9★ (145 Reviews)</span>
+              </div>
+
+              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-emerald-300 hover:border-emerald-500 placeholder-grid aspect-[16/10] flex flex-col items-center justify-center p-6 text-center spring-transition">
+                <img id="map-preview-1" src="" alt="Dự án Google Map 1" class="hidden absolute inset-0 w-full h-full object-cover" />
+                <div id="map-placeholder-1" class="space-y-1.5">
+                  <i class="ph-duotone ph-map-trifold text-emerald-600 text-3xl"></i>
+                  <div class="text-xs font-mono font-bold text-emerald-700">[PLACEHOLDER ẢNH MAPS #01]</div>
+                  <div class="text-xs text-slate-500">Bấm để chọn ảnh hoặc gửi ảnh cho AI</div>
+                </div>
+                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 1)" />
+              </label>
+            </div>
+          </div>
+
+          <!-- MAP #2 (6 cols) -->
+          <div class="md:col-span-6 bezel-shell group">
+            <div class="bezel-core p-5 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-7 h-7 rounded-full bg-sky-100 text-sky-700 font-display font-bold text-xs flex items-center justify-center">#2</span>
+                  <h3 class="font-display font-bold text-base text-slate-900">Dự Án Google Map #02 — Thẩm Mỹ & Spa</h3>
+                </div>
+                <span class="text-xs font-bold text-amber-500">5.0★ (125 Reviews)</span>
+              </div>
+
+              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-sky-300 hover:border-sky-500 placeholder-grid aspect-[16/10] flex flex-col items-center justify-center p-6 text-center spring-transition">
+                <img id="map-preview-2" src="" alt="Dự án Google Map 2" class="hidden absolute inset-0 w-full h-full object-cover" />
+                <div id="map-placeholder-2" class="space-y-1.5">
+                  <i class="ph-duotone ph-map-trifold text-sky-600 text-3xl"></i>
+                  <div class="text-xs font-mono font-bold text-sky-700">[PLACEHOLDER ẢNH MAPS #02]</div>
+                  <div class="text-xs text-slate-500">Bấm để chọn ảnh hoặc gửi ảnh cho AI</div>
+                </div>
+                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 2)" />
+              </label>
+            </div>
+          </div>
+
+          <!-- MAP #3 (4 cols) -->
+          <div class="md:col-span-4 bezel-shell group">
+            <div class="bezel-core p-5 space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">#3 • Khách Sạn & Homestay</span>
+                <span class="text-xs text-amber-500 font-bold">4.9★ (88)</span>
+              </div>
+
+              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-amber-300 hover:border-amber-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
+                <img id="map-preview-3" src="" alt="Dự án Google Map 3" class="hidden absolute inset-0 w-full h-full object-cover" />
+                <div id="map-placeholder-3" class="space-y-1">
+                  <i class="ph-duotone ph-map-pin-area text-amber-600 text-2xl"></i>
+                  <div class="text-[11px] font-mono font-bold text-amber-700">[PLACEHOLDER MAPS #03]</div>
+                </div>
+                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 3)" />
+              </label>
+            </div>
+          </div>
+
+          <!-- MAP #4 (4 cols) -->
+          <div class="md:col-span-4 bezel-shell group">
+            <div class="bezel-core p-5 space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">#4 • Phòng Khám Nha Khoa</span>
+                <span class="text-xs text-amber-500 font-bold">5.0★ (74)</span>
+              </div>
+
+              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-purple-300 hover:border-purple-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
+                <img id="map-preview-4" src="" alt="Dự án Google Map 4" class="hidden absolute inset-0 w-full h-full object-cover" />
+                <div id="map-placeholder-4" class="space-y-1">
+                  <i class="ph-duotone ph-map-pin-area text-purple-600 text-2xl"></i>
+                  <div class="text-[11px] font-mono font-bold text-purple-700">[PLACEHOLDER MAPS #04]</div>
+                </div>
+                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 4)" />
+              </label>
+            </div>
+          </div>
+
+          <!-- MAP #5 (4 cols) -->
+          <div class="md:col-span-4 bezel-shell group">
+            <div class="bezel-core p-5 space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-900">#5 • Showroom & Cửa Hàng</span>
+                <span class="text-xs text-amber-500 font-bold">4.9★ (210)</span>
+              </div>
+
+              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-emerald-300 hover:border-emerald-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
+                <img id="map-preview-5" src="" alt="Dự án Google Map 5" class="hidden absolute inset-0 w-full h-full object-cover" />
+                <div id="map-placeholder-5" class="space-y-1">
+                  <i class="ph-duotone ph-map-pin-area text-emerald-600 text-2xl"></i>
+                  <div class="text-[11px] font-mono font-bold text-emerald-700">[PLACEHOLDER MAPS #05]</div>
+                </div>
+                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 5)" />
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         FAQ SECTION (NGẮN GỌN, DỄ ĐỌC)
+         ===================================================================== -->
+    <section id="faq" class="py-20 px-4 border-t border-slate-200/80">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <div class="text-center reveal-up">
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900">
+            Câu Hỏi Thường Gặp
+          </h2>
+        </div>
+
+        <div class="space-y-3.5 reveal-up">
+          <div class="bezel-shell">
+            <details class="bezel-core p-5 group" open>
+              <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-base text-slate-900">
+                <span>1. Tăng đánh giá Google Maps tại 500KUSER có an toàn không?</span>
+                <span class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-open:rotate-45 spring-transition">
+                  <i class="ph-bold ph-plus text-sm"></i>
+                </span>
+              </summary>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                An toàn tuyệt đối. 500KUSER sử dụng 100% người dùng thật trong cộng đồng tìm kiếm từ khóa và đánh giá tự nhiên theo lộ trình, hoàn toàn tuân thủ chính sách của Google.
+              </p>
+            </details>
+          </div>
+
+          <div class="bezel-shell">
+            <details class="bezel-core p-5 group">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-base text-slate-900">
+                <span>2. Dịch vụ có dùng tool/bot tự động không?</span>
+                <span class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-open:rotate-45 spring-transition">
+                  <i class="ph-bold ph-plus text-sm"></i>
+                </span>
+              </summary>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                Không. Toàn bộ đánh giá đến từ dàn tài khoản Local Guide chất lượng và thành viên thật sử dụng thiết bị di động thật.
+              </p>
+            </details>
+          </div>
+
+          <div class="bezel-shell">
+            <details class="bezel-core p-5 group">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-display font-bold text-base text-slate-900">
+                <span>3. Đánh giá Maps có hỗ trợ SEO Website không?</span>
+                <span class="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-open:rotate-45 spring-transition">
+                  <i class="ph-bold ph-plus text-sm"></i>
+                </span>
+              </summary>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                Có. Hồ sơ Google Maps uy tín giúp xác thực Entity và truyền sức mạnh Backlink trực tiếp giúp Website lên Top bền vững.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         LEAD CAPTURE FORM SECTION
+         ===================================================================== -->
+    <section id="form-tu-van" class="py-20 md:py-24 px-4 border-t border-slate-200/80 bg-gradient-to-b from-white to-emerald-50/40">
+      <div class="max-w-6xl mx-auto">
+        <div class="bezel-shell-featured reveal-up">
+          <div class="bezel-core-featured p-8 sm:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Left Pitch (5 cols) -->
+              <div class="lg:col-span-5 space-y-5">
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+                  Đưa Địa Điểm Của Bạn Lên Top Cùng <span class="text-emerald-600">500KUSER</span>
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Để lại thông tin để chuyên gia Local SEO kiểm tra Map miễn phí và phản hồi ngay sau 5 phút!
+                </p>
+
+                <div class="space-y-2.5 text-sm text-slate-700 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-lg"></i>
+                    <span>Khảo sát & tối ưu SEO Map miễn phí</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-lg"></i>
+                    <span>Báo cáo Realtime qua AI BOT Telegram</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <i class="ph-fill ph-check-circle text-emerald-600 text-lg"></i>
+                    <span>Cam kết bảo hành 1 đổi 1 uy tín</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Form (7 cols) -->
+              <div class="lg:col-span-7">
+                <div class="bezel-shell">
+                  <div class="bezel-core p-6 sm:p-8">
+                    <form id="lead-form" onsubmit="handleTemporaryFormSubmit(event)" class="space-y-4">
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Họ và tên *</label>
+                          <input type="text" name="full_name" required placeholder="Nhập họ tên của bạn"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900" />
+                        </div>
+                        <div>
+                          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Số điện thoại / Zalo *</label>
+                          <input type="tel" name="phone" required placeholder="09xx xxx xxx"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900" />
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Khu vực Maps</label>
+                          <select name="map_region" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900 font-medium">
+                            <option value="Maps Việt Nam">Maps Việt Nam</option>
+                            <option value="Maps Quốc Tế">Maps Quốc Tế (US, UK, AU, EU...)</option>
+                            <option value="Chưa có Map - Cần tạo mới">Chưa có Map (Cần tạo mới)</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Gói quan tâm</label>
+                          <select id="package-select" name="service_package" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900 font-medium">
+                            <option value="Gói G1 - 25 Review">Gói G1 — 25 Review 5 Sao</option>
+                            <option value="Gói G2 - 60 Review">Gói G2 — 60 Review 5 Sao</option>
+                            <option value="Gói G3 - 100 Review (Ưa chuộng)" selected>Gói G3 — 100 Review 5 Sao (Ưa chuộng)</option>
+                            <option value="Gói G4 - Trên 1000 Review">Gói G4 — &gt;1.000 Review</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Link Google Maps hoặc Tên Địa Điểm</label>
+                        <input type="text" name="map_url" placeholder="Dán link Google Maps hoặc tên cửa hàng..."
+                          class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900" />
+                      </div>
+
+                      <button type="submit" class="group w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-base shadow-lg shadow-emerald-600/30 spring-transition active:scale-[0.99]">
+                        <span>Đăng Ký Tư Vấn Ngay</span>
+                        <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 spring-transition">
+                          <i class="ph-bold ph-paper-plane-tilt"></i>
+                        </span>
+                      </button>
+
+                      <div id="form-status" class="hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium text-center"></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       DETAILED FOOTER (THÔNG TIN TỪ 500KUSER.COM & FACESEO.VN)
+       ===================================================================== -->
+  <footer class="border-t border-slate-200/90 bg-white pt-14 pb-10 px-4">
+    <div class="max-w-7xl mx-auto space-y-10">
+      
+      <!-- Top Ecosystem Banner -->
+      <div class="bezel-shell">
+        <div class="bezel-core p-6 bg-gradient-to-r from-emerald-50/90 via-teal-50/60 to-sky-50/90 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-slate-900">
+              Hệ Sinh Thái 500KUSER.COM × FACESEO.VN — Đã Làm SEO & Maps Phải Biết!
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Kết hợp sức mạnh cộng đồng Traffic User thật 100%, tạo Google Suggest và đánh giá 5 sao Google Maps bền vững.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 shrink-0">
+            <a href="https://500kuser.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm spring-transition">
+              <i class="ph-bold ph-globe"></i>
+              <span>500kuser.com</span>
+            </a>
+            <a href="https://faceseo.vn" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-xs shadow-sm spring-transition">
+              <i class="ph-bold ph-arrow-square-out text-sky-600"></i>
+              <span>Faceseo.vn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+        
+        <!-- Column 1: About 500KUSER & FaceSEO (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 via-teal-500 to-sky-500 flex items-center justify-center text-white shadow-sm">
+              <i class="ph-fill ph-map-pin-line text-lg"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-display font-bold text-lg text-slate-900">500K<span class="text-emerald-600">USER</span></span>
+                <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">× FACESEO</span>
+              </div>
+              <p class="text-xs text-slate-500">Traffic User & Review Maps Thật 100%</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1 text-xs text-slate-600">
+            <div class="font-bold text-slate-900">CÔNG TY TNHH QUẢNG CÁO FACESEO</div>
+            <div><strong class="text-slate-800">MST:</strong> 0313027779 (Cấp ngày 25/11/2014)</div>
+            <div><strong class="text-slate-800">Lĩnh vực:</strong> Traffic User, Local SEO Maps & Đào tạo SEO</div>
+          </div>
+        </div>
+
+        <!-- Column 2: Hệ sinh thái Dịch Vụ (3 cols) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900">
+            Dịch Vụ Trọng Tâm
+          </h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+            <li><a href="#bang-gia" class="hover:text-emerald-600">• Đánh giá 5 Sao Maps VN & Quốc Tế</a></li>
+            <li><a href="#form-tu-van" class="hover:text-emerald-600">• Tạo & Xác minh Google Map chính chủ</a></li>
+            <li><a href="https://500kuser.com" target="_blank" rel="noopener" class="hover:text-emerald-600">• Traffic User thật 100% đẩy Top Google</a></li>
+            <li><a href="https://faceseo.vn" target="_blank" rel="noopener" class="hover:text-emerald-600">• Tạo Google Suggest & Tối ưu Entity</a></li>
+            <li><a href="https://faceseo.vn" target="_blank" rel="noopener" class="hover:text-emerald-600">• Đào tạo SEO & Digital Marketing</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Thông tin liên hệ 500KUSER & FACESEO (5 cols) -->
+        <div class="lg:col-span-5 space-y-3.5">
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-slate-900">
+            Liên Hệ Chính Thức (24/7)
+          </h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="tel:0795921361" class="p-3.5 rounded-2xl bg-emerald-50/70 hover:bg-emerald-50 border border-emerald-200 flex items-center gap-3 spring-transition">
+              <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-phone-call"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold uppercase text-emerald-700">Hotline / Zalo 500KUSER</div>
+                <div class="font-display font-bold text-sm text-slate-900">0795.921.361</div>
+              </div>
+            </a>
+
+            <a href="tel:0932523569" class="p-3.5 rounded-2xl bg-sky-50/70 hover:bg-sky-50 border border-sky-200 flex items-center gap-3 spring-transition">
+              <div class="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-headset"></i>
+              </div>
+              <div>
+                <div class="text-[10px] font-bold uppercase text-sky-700">Hotline FaceSEO</div>
+                <div class="font-display font-bold text-sm text-slate-900">0932.523.569</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-2 text-xs text-slate-600">
+            <div><strong class="text-slate-900">VP 500KUSER:</strong> Số 36 Đường A4, Phường 12, Quận Tân Bình, TP.HCM</div>
+            <div><strong class="text-slate-900">Trụ sở FaceSEO:</strong> 162L/24 Trường Chinh, Phường 12, Quận Tân Bình, TP.HCM</div>
+            <div class="flex flex-wrap gap-x-4 gap-y-1">
+              <span><strong class="text-slate-900">Email:</strong> <a href="mailto:admin@50kuser.com" class="text-emerald-700 font-semibold">admin@50kuser.com</a> | <a href="mailto:Linhnguyen@faceseo.vn" class="text-sky-700 font-semibold">Linhnguyen@faceseo.vn</a></span>
+            </div>
+            <div>
+              <strong class="text-slate-900">Fanpage:</strong> <a href="https://www.facebook.com/500kuser" target="_blank" rel="noopener" class="text-blue-600 font-semibold hover:underline">facebook.com/500kuser</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2014 – 2026 <strong class="text-slate-800">500KUSER.COM</strong> & <strong class="text-slate-800">CÔNG TY TNHH QUẢNG CÁO FACESEO</strong>. All rights reserved.
+        </div>
+        <div class="flex flex-wrap items-center gap-5 font-medium text-slate-600">
+          <a href="#quy-trinh" class="hover:text-emerald-600">Quy định sử dụng</a>
+          <a href="#bang-gia" class="hover:text-emerald-600">Thanh toán</a>
+          <a href="#tieu-chuan" class="hover:text-emerald-600">Chính sách bảo mật</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       INTERACTIVE JAVASCRIPT
+       ===================================================================== -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuIcon.className = isHidden ? 'ph-bold ph-list text-xl' : 'ph-bold ph-x text-xl';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.className = 'ph-bold ph-list text-xl';
+      });
+    });
+
+    const pricingData = {
+      vn: {
+        g1: '1.000.000',
+        u1: '40.000đ / review thật',
+        g2: '2.100.000',
+        u2: 'Chỉ 35.000đ / review',
+        g3: '3.000.000',
+        u3: 'Tối ưu — Chỉ 30.000đ / review',
+        g4: 'Thỏa thuận'
+      },
+      intl: {
+        g1: '2.500.000',
+        u1: 'Maps Quốc Tế — 25 Review',
+        g2: '5.400.000',
+        u2: 'Maps Quốc Tế — 60 Review',
+        g3: '8.500.000',
+        u3: 'Maps Quốc Tế — 100 Review',
+        g4: 'Thỏa thuận'
+      }
+    };
+
+    function switchPricingRegion(region) {
+      const tabVn = document.getElementById('tab-vn');
+      const tabIntl = document.getElementById('tab-intl');
+
+      if (region === 'vn') {
+        tabVn.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-emerald-600 text-white shadow-md shadow-emerald-600/20 spring-transition flex items-center gap-2';
+        tabIntl.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 spring-transition flex items-center gap-2';
+      } else {
+        tabIntl.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-emerald-600 text-white shadow-md shadow-emerald-600/20 spring-transition flex items-center gap-2';
+        tabVn.className = 'px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 spring-transition flex items-center gap-2';
+      }
+
+      document.getElementById('price-g1').textContent = pricingData[region].g1;
+      document.getElementById('unit-g1').textContent = pricingData[region].u1;
+      document.getElementById('price-g2').textContent = pricingData[region].g2;
+      document.getElementById('unit-g2').textContent = pricingData[region].u2;
+      document.getElementById('price-g3').textContent = pricingData[region].g3;
+      document.getElementById('unit-g3').textContent = pricingData[region].u3;
+      document.getElementById('price-g4').textContent = pricingData[region].g4;
+    }
+
+    function updateCalculator() {
+      const count = parseInt(document.getElementById('calc-slider').value, 10);
+      const withContent = document.getElementById('calc-content').checked;
+      const withPhoto = document.getElementById('calc-photo').checked;
+
+      document.getElementById('calc-count-label').textContent = count + ' Review';
+
+      let unitPrice = 40000;
+      if (count >= 100) unitPrice = 30000;
+      else if (count >= 60) unitPrice = 35000;
+
+      let total = count * unitPrice;
+      if (withContent) total += count * 10000;
+      if (withPhoto) total += Math.round(count * 0.2) * 20000;
+
+      document.getElementById('calc-total').textContent = total.toLocaleString('vi-VN') + 'đ';
+    }
+
+    function selectPackage(pkgName) {
+      const select = document.getElementById('package-select');
+      if (select) select.value = pkgName;
+    }
+
+    function previewSingleMap(event, index) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById('map-preview-' + index);
+        const placeholder = document.getElementById('map-placeholder-' + index);
+        img.src = e.target.result;
+        img.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleBulkMapUpload(event) {
+      const files = Array.from(event.target.files).slice(0, 5);
+      files.forEach((file, idx) => {
+        const slot = idx + 1;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.getElementById('map-preview-' + slot);
+          const placeholder = document.getElementById('map-placeholder-' + slot);
+          if (img && placeholder) {
+            img.src = e.target.result;
+            img.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function handleTemporaryFormSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const payload = Object.fromEntries(formData.entries());
+      console.log('500KUSER Lead Form Payload:', payload);
+
+      const statusEl = document.getElementById('form-status');
+      statusEl.classList.remove('hidden');
+      statusEl.innerHTML = '✓ Đã ghi nhận thông tin của <strong>' + payload.full_name + '</strong> (' + payload.phone + '). Sẵn sàng kết nối Data khi bạn yêu cầu!';
+      event.target.reset();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
