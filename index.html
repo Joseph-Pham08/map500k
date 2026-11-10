@@ -1216,28 +1216,18 @@
     </section>
 
     <!-- =====================================================================
-         SECTION 6: DỰ ÁN REVIEW GOOGLE MAP 5 SAO ĐÃ TRIỂN KHAI (5 MAPS)
+         SECTION 6: DỰ ÁN REVIEW GOOGLE MAP 5 SAO ĐÃ TRIỂN KHAI (5 MAPS THỰC TẾ)
          ===================================================================== -->
     <section id="du-an" class="py-20 md:py-24 px-4 border-t border-slate-200/80 bg-white/60">
       <div class="max-w-7xl mx-auto space-y-10">
         
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-up">
-          <div class="space-y-2 max-w-2xl">
-            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
-              Dự Án Review Google Map 5 Sao Đã Triển Khai
-            </h2>
-            <p class="text-slate-600 text-sm sm:text-base">
-              5 dự án tiêu biểu từ cộng đồng 500KUSER (Bấm vào khung để chọn ảnh chụp Maps hoặc gửi ảnh cho AI đính kèm).
-            </p>
-          </div>
-
-          <div class="shrink-0">
-            <label class="cursor-pointer inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs sm:text-sm font-bold shadow-sm spring-transition">
-              <i class="ph-bold ph-upload-simple text-lg text-emerald-600"></i>
-              <span>Tải thử 5 ảnh chụp Maps</span>
-              <input id="bulk-map-upload" type="file" accept="image/*" multiple class="hidden" onchange="handleBulkMapUpload(event)" />
-            </label>
-          </div>
+        <div class="text-center max-w-3xl mx-auto space-y-2 reveal-up">
+          <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-slate-900">
+            Dự Án Review Google Map 5 Sao Đã Triển Khai
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Hình ảnh thực tế các bài đánh giá 5 sao kèm ảnh check-in từ cộng đồng người dùng & Local Guide 500KUSER.
+          </p>
         </div>
 
         <!-- 5 Maps Showcase Grid -->
@@ -1245,104 +1235,77 @@
           
           <!-- MAP #1 (6 cols) -->
           <div class="md:col-span-6 bezel-shell group">
-            <div class="bezel-core p-5 space-y-4">
+            <div class="bezel-core p-5 space-y-4 flex flex-col justify-between">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2.5">
                   <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-display font-bold text-xs flex items-center justify-center">#1</span>
-                  <h3 class="font-display font-bold text-base text-slate-900">Dự Án Google Map #01 — Nhà Hàng Ẩm Thực</h3>
+                  <h3 class="font-display font-bold text-base text-slate-900">Nhà Hàng Ẩm Thực Hải Sản</h3>
                 </div>
-                <span class="text-xs font-bold text-amber-500">4.9★ (145 Reviews)</span>
+                <span class="text-xs font-bold text-amber-500">★★★★★ Local Guide</span>
               </div>
 
-              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-emerald-300 hover:border-emerald-500 placeholder-grid aspect-[16/10] flex flex-col items-center justify-center p-6 text-center spring-transition">
-                <img id="map-preview-1" src="" alt="Dự án Google Map 1" class="hidden absolute inset-0 w-full h-full object-cover" />
-                <div id="map-placeholder-1" class="space-y-1.5">
-                  <i class="ph-duotone ph-map-trifold text-emerald-600 text-3xl"></i>
-                  <div class="text-xs font-mono font-bold text-emerald-700">[PLACEHOLDER ẢNH MAPS #01]</div>
-                  <div class="text-xs text-slate-500">Bấm để chọn ảnh hoặc gửi ảnh cho AI</div>
-                </div>
-                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 1)" />
-              </label>
+              <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
+                <img src="./project-1.jpg" alt="Dự án Google Map 1 - Nhà Hàng Ẩm Thực" loading="lazy" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+              </div>
             </div>
           </div>
 
           <!-- MAP #2 (6 cols) -->
           <div class="md:col-span-6 bezel-shell group">
-            <div class="bezel-core p-5 space-y-4">
+            <div class="bezel-core p-5 space-y-4 flex flex-col justify-between">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2.5">
                   <span class="w-7 h-7 rounded-full bg-sky-100 text-sky-700 font-display font-bold text-xs flex items-center justify-center">#2</span>
-                  <h3 class="font-display font-bold text-base text-slate-900">Dự Án Google Map #02 — Thẩm Mỹ & Spa</h3>
+                  <h3 class="font-display font-bold text-base text-slate-900">Thẩm Mỹ Viện & Spa Làm Đẹp</h3>
                 </div>
-                <span class="text-xs font-bold text-amber-500">5.0★ (125 Reviews)</span>
+                <span class="text-xs font-bold text-amber-500">★★★★★ 5.0 Verified</span>
               </div>
 
-              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-sky-300 hover:border-sky-500 placeholder-grid aspect-[16/10] flex flex-col items-center justify-center p-6 text-center spring-transition">
-                <img id="map-preview-2" src="" alt="Dự án Google Map 2" class="hidden absolute inset-0 w-full h-full object-cover" />
-                <div id="map-placeholder-2" class="space-y-1.5">
-                  <i class="ph-duotone ph-map-trifold text-sky-600 text-3xl"></i>
-                  <div class="text-xs font-mono font-bold text-sky-700">[PLACEHOLDER ẢNH MAPS #02]</div>
-                  <div class="text-xs text-slate-500">Bấm để chọn ảnh hoặc gửi ảnh cho AI</div>
-                </div>
-                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 2)" />
-              </label>
+              <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
+                <img src="./project-2.jpg" alt="Dự án Google Map 2 - Spa Làm Đẹp" loading="lazy" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+              </div>
             </div>
           </div>
 
           <!-- MAP #3 (4 cols) -->
           <div class="md:col-span-4 bezel-shell group">
-            <div class="bezel-core p-5 space-y-3.5">
+            <div class="bezel-core p-5 space-y-3.5 flex flex-col justify-between">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-900">#3 • Khách Sạn & Homestay</span>
-                <span class="text-xs text-amber-500 font-bold">4.9★ (88)</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-900">#3 • Khách Sạn Đệ Nhất</span>
+                <span class="text-xs text-amber-500 font-bold">5/5 ★ Local Guide</span>
               </div>
 
-              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-amber-300 hover:border-amber-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
-                <img id="map-preview-3" src="" alt="Dự án Google Map 3" class="hidden absolute inset-0 w-full h-full object-cover" />
-                <div id="map-placeholder-3" class="space-y-1">
-                  <i class="ph-duotone ph-map-pin-area text-amber-600 text-2xl"></i>
-                  <div class="text-[11px] font-mono font-bold text-amber-700">[PLACEHOLDER MAPS #03]</div>
-                </div>
-                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 3)" />
-              </label>
+              <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
+                <img src="./project-3.jpg" alt="Dự án Google Map 3 - Khách Sạn Đệ Nhất" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+              </div>
             </div>
           </div>
 
           <!-- MAP #4 (4 cols) -->
           <div class="md:col-span-4 bezel-shell group">
-            <div class="bezel-core p-5 space-y-3.5">
+            <div class="bezel-core p-5 space-y-3.5 flex flex-col justify-between">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-900">#4 • Phòng Khám Nha Khoa</span>
-                <span class="text-xs text-amber-500 font-bold">5.0★ (74)</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-900">#4 • Nha Khoa Parkway</span>
+                <span class="text-xs text-amber-500 font-bold">★★★★★ 5.0</span>
               </div>
 
-              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-purple-300 hover:border-purple-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
-                <img id="map-preview-4" src="" alt="Dự án Google Map 4" class="hidden absolute inset-0 w-full h-full object-cover" />
-                <div id="map-placeholder-4" class="space-y-1">
-                  <i class="ph-duotone ph-map-pin-area text-purple-600 text-2xl"></i>
-                  <div class="text-[11px] font-mono font-bold text-purple-700">[PLACEHOLDER MAPS #04]</div>
-                </div>
-                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 4)" />
-              </label>
+              <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
+                <img src="./project-4.jpg" alt="Dự án Google Map 4 - Nha Khoa Parkway" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+              </div>
             </div>
           </div>
 
           <!-- MAP #5 (4 cols) -->
           <div class="md:col-span-4 bezel-shell group">
-            <div class="bezel-core p-5 space-y-3.5">
+            <div class="bezel-core p-5 space-y-3.5 flex flex-col justify-between">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-900">#5 • Showroom & Cửa Hàng</span>
-                <span class="text-xs text-amber-500 font-bold">4.9★ (210)</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-900">#5 • Showroom Ô Tô VinFast</span>
+                <span class="text-xs text-amber-500 font-bold">★★★★★ Local Guide</span>
               </div>
 
-              <label class="relative cursor-pointer rounded-2xl overflow-hidden border-2 border-dashed border-emerald-300 hover:border-emerald-500 placeholder-grid aspect-[4/3] flex flex-col items-center justify-center p-4 text-center spring-transition">
-                <img id="map-preview-5" src="" alt="Dự án Google Map 5" class="hidden absolute inset-0 w-full h-full object-cover" />
-                <div id="map-placeholder-5" class="space-y-1">
-                  <i class="ph-duotone ph-map-pin-area text-emerald-600 text-2xl"></i>
-                  <div class="text-[11px] font-mono font-bold text-emerald-700">[PLACEHOLDER MAPS #05]</div>
-                </div>
-                <input type="file" accept="image/*" class="hidden" onchange="previewSingleMap(event, 5)" />
-              </label>
+              <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
+                <img src="./project-5.jpg" alt="Dự án Google Map 5 - Showroom Ô Tô" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+              </div>
             </div>
           </div>
 
