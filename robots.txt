@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /chinh-sach-*.html
-Disallow: /dieu-khoan-su-dung.html
+Disallow: /pages/
 
 Sitemap: https://joseph-pham08.github.io/map500k/sitemap.xml
