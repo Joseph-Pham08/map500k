@@ -1409,7 +1409,11 @@
               <div class="lg:col-span-7">
                 <div class="bezel-shell">
                   <div class="bezel-core p-6 sm:p-8">
-                    <form id="lead-form" onsubmit="handleTemporaryFormSubmit(event)" class="space-y-4">
+                    <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                      <!-- Hidden fields for Domain & URL tracking across multiple cloned websites -->
+                      <input type="hidden" name="domain" id="lead-domain" value="" />
+                      <input type="hidden" name="source_url" id="lead-source-url" value="" />
+
                       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Họ và tên *</label>
@@ -1731,16 +1735,83 @@
       });
     }
 
-    function handleTemporaryFormSubmit(event) {
+    // =========================================================================
+    // CẤU HÌNH GOOGLE APPS SCRIPT WEB APP URL ĐẨY DATA VỀ GOOGLE SHEETS
+    // (Dán URL Web App bạn vừa Deploy từ Google Sheet vào đây)
+    // =========================================================================
+    const GOOGLE_SHEET_WEBAPP_URL = "";
+
+    // Tự động nhận diện Tên miền (Domain) và URL hiện tại (Dành cho việc clone nhiều domain)
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentDomain = window.location.hostname || "500kuser.com";
+      const currentUrl = window.location.href;
+      
+      const domainInput = document.getElementById("lead-domain");
+      const urlInput = document.getElementById("lead-source-url");
+      
+      if (domainInput) domainInput.value = currentDomain;
+      if (urlInput) urlInput.value = currentUrl;
+    });
+
+    async function handleFormSubmit(event) {
       event.preventDefault();
-      const formData = new FormData(event.target);
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
+      const statusEl = document.getElementById('form-status');
+
+      // Đảm bảo domain luôn có giá trị ngay cả khi clone
+      const domainInput = document.getElementById("lead-domain");
+      if (domainInput && !domainInput.value) {
+        domainInput.value = window.location.hostname || "500kuser.com";
+      }
+
+      const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
       console.log('500KUSER Lead Form Payload:', payload);
 
-      const statusEl = document.getElementById('form-status');
-      statusEl.classList.remove('hidden');
-      statusEl.innerHTML = '✓ Đã ghi nhận thông tin của <strong>' + payload.full_name + '</strong> (' + payload.phone + '). Sẵn sàng kết nối Data khi bạn yêu cầu!';
-      event.target.reset();
+      // Trạng thái đang gửi
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="inline-flex items-center gap-2">
+          <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          Đang gửi thông tin...
+        </span>
+      `;
+
+      try {
+        if (GOOGLE_SHEET_WEBAPP_URL && GOOGLE_SHEET_WEBAPP_URL.trim() !== "") {
+          // Gửi dữ liệu trực tiếp về Google Sheet Web App
+          await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          statusEl.className = "p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-800 font-semibold text-center";
+          statusEl.innerHTML = `✓ Cảm ơn <strong>${payload.full_name}</strong>! Thông tin của bạn đã được chuyển tới chuyên gia 500KUSER. Chúng tôi sẽ liên hệ lại qua SĐT/Zalo <strong>${payload.phone}</strong> trong ít phút.`;
+          form.reset();
+        } else {
+          // Khi chưa gắn URL Web App, hiển thị mô phỏng thành công và log domain
+          statusEl.className = "p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-800 font-medium text-center";
+          statusEl.innerHTML = `✓ Đã ghi nhận thông tin của <strong>${payload.full_name}</strong> (${payload.phone}) từ domain: <strong class="text-sky-700">${payload.domain}</strong>.<br><span class="text-[11px] text-slate-500 font-normal">(Hãy dán link Web App Google Apps Script vào file index.html để đẩy tự động vào Google Sheet)</span>`;
+          form.reset();
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        statusEl.className = "p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs sm:text-sm text-rose-800 font-medium text-center";
+        statusEl.innerHTML = `Có lỗi xảy ra khi gửi dữ liệu. Vui lòng liên hệ trực tiếp qua Hotline/Zalo: <strong>0981.680.774</strong>!`;
+      } finally {
+        statusEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     }
 
     const observer = new IntersectionObserver((entries) => {
