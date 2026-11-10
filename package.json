@@ -1,0 +1,22 @@
+{
+  "name": "map500k",
+  "version": "1.0.0",
+  "description": "",
+  "main": "google-apps-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-Pham08/map500k.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Joseph-Pham08/map500k/issues"
+  },
+  "homepage": "https://github.com/Joseph-Pham08/map500k#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

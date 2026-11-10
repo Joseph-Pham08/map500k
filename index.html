@@ -10,136 +10,56 @@
   <link rel="icon" type="image/png" href="./logo.png" />
   <link rel="apple-touch-icon" href="./logo.png" />
 
-  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <!-- Canonical & Open Graph SEO -->
+  <link rel="canonical" href="https://joseph-pham08.github.io/map500k/" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="500KUSER — Tăng Đánh Giá Google Maps 5 Sao Cùng Cộng Đồng Thật" />
+  <meta property="og:description" content="500KUSER là cộng đồng đông đảo hỗ trợ view, đánh giá 5 sao Google Maps cùng nhau lên Top Google và giúp khách hàng tin tưởng mua hàng nhiều hơn." />
+  <meta property="og:url" content="https://joseph-pham08.github.io/map500k/" />
+  <meta property="og:site_name" content="500KUSER" />
+  <meta property="og:image" content="https://joseph-pham08.github.io/map500k/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="500KUSER — Tăng Đánh Giá Google Maps 5 Sao" />
+  <meta name="twitter:description" content="Cộng đồng hỗ trợ view và đánh giá Google Maps 5 sao người dùng thật 100%, bảo hành 1 đổi 1." />
+  <meta name="twitter:image" content="https://joseph-pham08.github.io/map500k/logo.png" />
+
+  <!-- Preload & Preconnect for Peak Performance -->
+  <link rel="preload" href="./style.css" as="style" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk with display=swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Phosphor Icons (Non-blocking Defer) -->
+  <script defer src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-          }
-        }
-      }
+  <!-- JSON-LD Structured Data for 100% SEO Score -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "500KUSER - Dịch Vụ Đánh Giá Google Maps 5 Sao",
+    "description": "500KUSER là cộng đồng user đông đảo hỗ trợ view đánh giá cùng nhau lên top Google và giúp cho khách hàng tin tưởng mua hàng nhiều hơn.",
+    "url": "https://joseph-pham08.github.io/map500k/",
+    "telephone": "+84981680774",
+    "priceRange": "$$",
+    "image": "https://joseph-pham08.github.io/map500k/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Số 36 Đường A4, Phường 12",
+      "addressLocality": "Quận Tân Bình",
+      "addressRegion": "TP. Hồ Chí Minh",
+      "addressCountry": "VN"
+    },
+    "founder": {
+      "@type": "Organization",
+      "name": "CÔNG TY TNHH QUẢNG CÁO FACESEO"
     }
+  }
   </script>
-
-  <style>
-    :root {
-      --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    html, body {
-      background-color: #F8FAFC !important;
-      color: #0F172A;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Bright & Fresh Ambient Mesh Background */
-    .ambient-bright {
-      background-color: #F8FAFC !important;
-      background-image:
-        radial-gradient(circle at 12% 10%, rgba(16, 185, 129, 0.12) 0%, transparent 42%),
-        radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.12) 0%, transparent 42%),
-        radial-gradient(circle at 50% 45%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 45%) !important;
-    }
-
-    /* Double-Bezel Architecture */
-    .bezel-shell {
-      background: rgba(15, 23, 42, 0.03);
-      border: 1px solid rgba(15, 23, 42, 0.07);
-      border-radius: 2rem;
-      padding: 0.375rem;
-      transition: transform 0.6s var(--ease-spring), border-color 0.6s var(--ease-spring), box-shadow 0.6s var(--ease-spring);
-    }
-    .bezel-shell:hover {
-      border-color: rgba(16, 185, 129, 0.35);
-      box-shadow: 0 24px 48px -15px rgba(15, 23, 42, 0.08);
-      transform: translateY(-2px);
-    }
-    .bezel-core {
-      background: #FFFFFF;
-      border-radius: calc(2rem - 0.375rem);
-      box-shadow:
-        0 4px 20px -2px rgba(15, 23, 42, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      height: 100%;
-    }
-
-    /* Highlighted Featured Bezel */
-    .bezel-shell-featured {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(14, 165, 233, 0.22), rgba(245, 158, 11, 0.22));
-      border: 1px solid rgba(16, 185, 129, 0.45);
-      border-radius: 2rem;
-      padding: 0.4rem;
-      box-shadow: 0 28px 60px -15px rgba(16, 185, 129, 0.16);
-      transition: transform 0.6s var(--ease-spring);
-    }
-    .bezel-core-featured {
-      background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
-      border-radius: calc(2rem - 0.4rem);
-      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 1);
-      height: 100%;
-    }
-
-    .spring-transition {
-      transition: all 0.65s var(--ease-spring);
-    }
-
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
-      will-change: opacity, transform;
-    }
-    .reveal-up.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .placeholder-grid {
-      background-color: #F1F5F9;
-      background-image:
-        linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      background: #E2E8F0;
-      height: 8px;
-      border-radius: 999px;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #10B981;
-      border: 3px solid #FFFFFF;
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.45);
-      cursor: pointer;
-      transition: transform 0.2s var(--ease-spring);
-    }
-    input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
-    }
-  </style>
 </head>
 
 <body class="ambient-bright text-slate-900 antialiased selection:bg-emerald-500/20 selection:text-emerald-900">
@@ -151,7 +71,7 @@
     <nav class="max-w-6xl mx-auto pointer-events-auto flex items-center justify-between px-4 py-2.5 rounded-full bg-white/85 backdrop-blur-2xl border border-slate-200/80 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.08)]">
       <!-- Brand Identity -->
       <a href="#top" class="flex items-center gap-3 pl-2 group">
-        <img src="./logo.png" alt="500KUSER Logo" class="w-10 h-10 rounded-full object-contain shadow-sm group-hover:scale-105 spring-transition" />
+        <img src="./logo.png" alt="500KUSER Logo" width="120" height="125" class="w-10 h-10 rounded-full object-contain shadow-sm group-hover:scale-105 spring-transition" />
         <div class="flex flex-col">
           <div class="flex items-center gap-1.5">
             <span class="font-display font-bold text-lg tracking-tight text-slate-900">500K<span class="text-emerald-700">USER</span></span>
@@ -180,7 +100,7 @@
           </span>
         </a>
 
-        <button id="mobile-menu-btn" aria-label="Menu" class="lg:hidden w-10 h-10 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800">
+        <button id="mobile-menu-btn" aria-label="Mở menu điều hướng" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-800 transition-colors">
           <i id="menu-icon" class="ph-bold ph-list text-xl"></i>
         </button>
       </div>
@@ -1247,7 +1167,7 @@
               </div>
 
               <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
-                <img src="./project-1.jpg" alt="Dự án Google Map 1 - Nhà Hàng Ẩm Thực" loading="lazy" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+                <img src="./project-1.jpg" alt="Dự án Google Map 1 - Nhà Hàng Ẩm Thực" width="504" height="570" loading="lazy" decoding="async" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
               </div>
             </div>
           </div>
@@ -1264,7 +1184,7 @@
               </div>
 
               <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
-                <img src="./project-2.jpg" alt="Dự án Google Map 2 - Spa Làm Đẹp" loading="lazy" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+                <img src="./project-2.jpg" alt="Dự án Google Map 2 - Spa Làm Đẹp" width="505" height="572" loading="lazy" decoding="async" class="w-full h-[380px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
               </div>
             </div>
           </div>
@@ -1278,7 +1198,7 @@
               </div>
 
               <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
-                <img src="./project-3.jpg" alt="Dự án Google Map 3 - Khách Sạn Đệ Nhất" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+                <img src="./project-3.jpg" alt="Dự án Google Map 3 - Khách Sạn Đệ Nhất" width="505" height="608" loading="lazy" decoding="async" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
               </div>
             </div>
           </div>
@@ -1292,7 +1212,7 @@
               </div>
 
               <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
-                <img src="./project-4.jpg" alt="Dự án Google Map 4 - Nha Khoa Parkway" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+                <img src="./project-4.jpg" alt="Dự án Google Map 4 - Nha Khoa Parkway" width="506" height="650" loading="lazy" decoding="async" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
               </div>
             </div>
           </div>
@@ -1306,7 +1226,7 @@
               </div>
 
               <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50 p-2 flex items-center justify-center">
-                <img src="./project-5.jpg" alt="Dự án Google Map 5 - Showroom Ô Tô" loading="lazy" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
+                <img src="./project-5.jpg" alt="Dự án Google Map 5 - Showroom Ô Tô" width="507" height="599" loading="lazy" decoding="async" class="w-full h-[340px] object-contain rounded-xl group-hover:scale-[1.02] spring-transition" />
               </div>
             </div>
           </div>
@@ -1522,7 +1442,7 @@
         <!-- Column 1: About 500KUSER & FaceSEO (4 cols) -->
         <div class="lg:col-span-4 space-y-4">
           <div class="flex items-center gap-3">
-            <img src="./logo.png" alt="500KUSER Logo" class="w-11 h-11 rounded-full object-contain shadow-sm" />
+            <img src="./logo.png" alt="500KUSER Logo" width="120" height="125" class="w-11 h-11 rounded-full object-contain shadow-sm" />
             <div>
               <div class="flex items-center gap-2">
                 <span class="font-display font-bold text-lg text-slate-900">500K<span class="text-emerald-700">USER</span></span>
