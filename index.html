@@ -426,10 +426,10 @@
                 </div>
                 <div>
                   <div class="flex items-baseline gap-1">
-                    <span id="price-g1" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">1.000.000</span>
+                    <span id="price-g1" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">500.000</span>
                     <span class="text-sm text-slate-500 font-bold">đ</span>
                   </div>
-                  <p id="unit-g1" class="text-xs text-slate-500 mt-1">40.000đ / review thật</p>
+                  <p id="unit-g1" class="text-xs text-slate-500 mt-1">20.000đ / review thật</p>
                 </div>
 
                 <div class="pt-4 border-t border-slate-100 space-y-2.5 text-sm text-slate-600">
@@ -476,10 +476,10 @@
                 </div>
                 <div>
                   <div class="flex items-baseline gap-1">
-                    <span id="price-g2" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">2.100.000</span>
+                    <span id="price-g2" class="font-display font-bold text-3xl sm:text-4xl text-slate-900">1.200.000</span>
                     <span class="text-sm text-slate-500 font-bold">đ</span>
                   </div>
-                  <p id="unit-g2" class="text-xs text-slate-500 mt-1">Chỉ 35.000đ / review</p>
+                  <p id="unit-g2" class="text-xs text-slate-500 mt-1">Chỉ 20.000đ / review</p>
                 </div>
 
                 <div class="pt-4 border-t border-slate-100 space-y-2.5 text-sm text-slate-600">
@@ -526,10 +526,10 @@
                 </div>
                 <div>
                   <div class="flex items-baseline gap-1">
-                    <span id="price-g3" class="font-display font-bold text-3xl sm:text-4xl text-emerald-600">3.000.000</span>
+                    <span id="price-g3" class="font-display font-bold text-3xl sm:text-4xl text-emerald-600">2.000.000</span>
                     <span class="text-sm text-slate-600 font-bold">đ</span>
                   </div>
-                  <p id="unit-g3" class="text-xs text-emerald-700 font-semibold mt-1">Tối ưu — Chỉ 30.000đ / review</p>
+                  <p id="unit-g3" class="text-xs text-emerald-700 font-semibold mt-1">Tối ưu — Chỉ 20.000đ / review</p>
                 </div>
 
                 <div class="pt-4 border-t border-emerald-200/70 space-y-2.5 text-sm text-slate-700">
@@ -677,7 +677,7 @@
               <div class="p-3.5 rounded-2xl bg-emerald-600 text-white flex items-center justify-between">
                 <div>
                   <div class="text-[11px] text-emerald-100">Dự kiến (Maps VN)</div>
-                  <div id="calc-total" class="font-display font-bold text-xl text-white">2.100.000đ</div>
+                  <div id="calc-total" class="font-display font-bold text-xl text-white">1.200.000đ</div>
                 </div>
                 <a href="#form-tu-van" class="px-4 py-2 rounded-full bg-white text-emerald-700 font-extrabold text-xs hover:bg-emerald-50 spring-transition">
                   Đăng ký ngay
@@ -1585,12 +1585,12 @@
 
     const pricingData = {
       vn: {
-        g1: '1.000.000',
-        u1: '40.000đ / review thật',
-        g2: '2.100.000',
-        u2: 'Chỉ 35.000đ / review',
-        g3: '3.000.000',
-        u3: 'Tối ưu — Chỉ 30.000đ / review',
+        g1: '500.000',
+        u1: '20.000đ / review thật',
+        g2: '1.200.000',
+        u2: 'Chỉ 20.000đ / review',
+        g3: '2.000.000',
+        u3: 'Tối ưu — Chỉ 20.000đ / review',
         g4: 'Thỏa thuận'
       },
       intl: {
@@ -1632,9 +1632,7 @@
 
       document.getElementById('calc-count-label').textContent = count + ' Review';
 
-      let unitPrice = 40000;
-      if (count >= 100) unitPrice = 30000;
-      else if (count >= 60) unitPrice = 35000;
+      let unitPrice = 20000;
 
       let total = count * unitPrice;
       if (withContent) total += count * 10000;
