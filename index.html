@@ -1453,6 +1453,17 @@
                           class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-emerald-500 focus:outline-none text-sm text-slate-900" />
                       </div>
 
+                      <!-- CHECKBOX ĐỒNG Ý CHÍNH SÁCH BẢO MẬT & XỬ LÝ DỮ LIỆU -->
+                      <div class="pt-1">
+                        <label class="flex items-start gap-2.5 cursor-pointer text-xs text-slate-600 select-none group">
+                          <input type="checkbox" name="agree_privacy" id="agree-privacy" required
+                            class="mt-0.5 w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300 cursor-pointer shrink-0 accent-emerald-600" />
+                          <span class="leading-relaxed">
+                            Tôi đồng ý với <button type="button" onclick="openPrivacyModal()" class="text-emerald-700 font-semibold underline hover:text-emerald-800 focus:outline-none">Chính sách bảo mật</button> và cho phép xử lý dữ liệu cho mục đích liên hệ.
+                          </span>
+                        </label>
+                      </div>
+
                       <button type="submit" class="group w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-base shadow-lg shadow-emerald-600/30 spring-transition active:scale-[0.99]">
                         <span>Đăng Ký Tư Vấn Ngay</span>
                         <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 spring-transition">
@@ -1838,6 +1849,128 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+    // =========================================================================
+    // XỬ LÝ POPUP MODAL CHÍNH SÁCH BẢO MẬT THÔNG TIN
+    // =========================================================================
+    function openPrivacyModal() {
+      const modal = document.getElementById('privacy-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePrivacyModal() {
+      const modal = document.getElementById('privacy-modal');
+      if (modal) {
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 200);
+      }
+    }
+
+    function acceptPrivacyAndClose() {
+      const checkbox = document.getElementById('agree-privacy');
+      if (checkbox) {
+        checkbox.checked = true;
+      }
+      closePrivacyModal();
+    }
+
+    // Đóng popup khi ấn Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePrivacyModal();
+    });
   </script>
+
+  <!-- =====================================================================
+       POPUP MODAL: CHÍNH SÁCH BẢO MẬT THÔNG TIN
+       ===================================================================== -->
+  <div id="privacy-modal" onclick="if(event.target===this) closePrivacyModal()" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-slate-50 border-b border-slate-200/80 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold">
+            <i class="ph-fill ph-shield-check text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-base text-slate-900">Chính Sách Bảo Mật Thông Tin</h3>
+            <p class="text-[11px] text-slate-500">Bảo vệ quyền riêng tư & dữ liệu theo Nghị định 13/2023/NĐ-CP</p>
+          </div>
+        </div>
+        <button type="button" onclick="closePrivacyModal()" class="w-8 h-8 rounded-full bg-slate-200/70 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-base transition-colors" aria-label="Đóng popup">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 text-emerald-900 font-medium text-xs">
+          500KUSER cam kết tôn trọng quyền riêng tư và bảo mật tuyệt đối mọi thông tin khách hàng cung cấp. Dữ liệu chỉ phục vụ mục đích tư vấn và triển khai dịch vụ review Google Maps.
+        </div>
+
+        <section class="space-y-1.5">
+          <h4 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px]">1</span>
+            Mục Đích Thu Thập Dữ Liệu
+          </h4>
+          <p class="text-slate-600">
+            Thông tin như Họ tên, Số điện thoại / Zalo và Link Google Maps được thu thập để: tư vấn gói dịch vụ phù hợp, gửi báo cáo tiến độ review thật, thực hiện chính sách bảo hành bù review và xuất hóa đơn theo yêu cầu.
+          </p>
+        </section>
+
+        <section class="space-y-1.5">
+          <h4 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px]">2</span>
+            Cam Kết Không Chia Sẻ Cho Bên Thứ Ba
+          </h4>
+          <p class="text-slate-600">
+            Tuyệt đối không chia sẻ, mua bán hoặc tiết lộ số điện thoại / thông tin Maps của bạn cho bất kỳ đối tác thương mại nào khác ngoài phạm vi quản lý nội bộ của 500KUSER & Công ty TNHH Quảng Cáo FaceSEO.
+          </p>
+        </section>
+
+        <section class="space-y-1.5">
+          <h4 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px]">3</span>
+            Thời Gian Lưu Trữ & Quyền Của Khách Hàng
+          </h4>
+          <p class="text-slate-600">
+            Dữ liệu được lưu trữ an toàn trong suốt thời gian bảo hành chiến dịch. Bạn có toàn quyền yêu cầu kiểm tra, đính chính hoặc yêu cầu xóa bỏ thông tin cá nhân khỏi hệ thống bất cứ lúc nào qua Hotline/Zalo <strong>0981.680.774</strong> hoặc email <strong>admin@50kuser.com</strong>.
+          </p>
+        </section>
+
+        <section class="space-y-1.5">
+          <h4 class="font-bold text-slate-900 text-xs sm:text-sm flex items-center gap-2">
+            <span class="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center text-[10px]">4</span>
+            Đơn Vị Quản Lý
+          </h4>
+          <div class="text-[11px] text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-0.5">
+            <div><strong>CÔNG TY TNHH QUẢNG CÁO FACESEO (MST: 0313027779)</strong></div>
+            <div>Địa chỉ: Số 36 Đường A4, Phường 12, Quận Tân Bình, TP. Hồ Chí Minh</div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-4 bg-slate-50 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <a href="./chinh-sach-bao-mat-thong-tin.html" target="_blank" rel="nofollow" class="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+          <span>Xem bản chi tiết đầy đủ</span>
+          <i class="ph-bold ph-arrow-square-out"></i>
+        </a>
+        <button type="button" onclick="acceptPrivacyAndClose()" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition-all">
+          Tôi Đã Hiểu & Đồng Ý
+        </button>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
